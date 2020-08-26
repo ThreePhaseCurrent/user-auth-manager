@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md fixed-top bg-primary" data-aos="zoom-in">
+  <a href="#" class="navbar-brand text-white">User Auth Manager</a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <img src="../../../assets/images/toggler2.png" style="width: 50px; height: 50px">
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <div class="navbar-nav" *ngIf="!isLoggedIn">
+      <a class="nav-item nav-link text-white" routerLink="/">Home</a>
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="navbar-nav ml-auto">
+      <a class="nav-item nav-link text-white" routerLink="/login" style="cursor: pointer">Login</a>
+      <a class="nav-item nav-link text-white" routerLink="/register" style="cursor: pointer">Register</a>
+    </div>
+
+    <!--user info-->
+    <div class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <a class="nav-item nav-link text-white">{{userEmail()}}</a>
+      <a class="nav-item nav-link text-white" href="#" (click)="logout()">Logout</a>
+    </div>
+    <!--end user info-->
+
+  </div>
+</nav>

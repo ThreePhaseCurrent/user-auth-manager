@@ -1,0 +1,56 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-sm-10 col-md-6 col-lg-3 mx-auto">
+
+      <div class="row" data-aos="flip-left"
+           data-aos-easing="ease-out-cubic"
+           data-aos-duration="1000">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                  <h1>Login</h1>
+                </div>
+              </div>
+
+              <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-10 mx-auto">
+                    <mat-card-content>
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="email" placeholder="Email">
+                        <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="full-width">
+                        <input matInput type="password" formControlName="password" placeholder="Password">
+                        <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+                      </mat-form-field>
+
+                      <div *ngIf="hasError">
+                        <p style="color: red">
+                          Login or password is invalid!
+                        </p>
+                      </div>
+
+                    </mat-card-content>
+
+                    <div class="row mt-3">
+                      <div class="col-12 p-0 d-flex justify-content-center">
+                        <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

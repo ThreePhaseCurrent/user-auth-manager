@@ -1,0 +1,21 @@
+<div class="container-fluid mt-5 mt-lg-5">
+  <div class="row">
+    <div class="col-md-8 col-sm-12 mx-auto">
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center mb-3">
+          <h1>
+            Users list
+          </h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div *ngFor="let user of userList" class="col-md-6 col-lg-4 mb-3">
+          <app-user-detail [user]="user"></app-user-detail>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
